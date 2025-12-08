@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>문자열 변환</title>
+    <style>
+        body { background: #111; color: white; font-family: monospace; padding: 20px; }
+        textarea { width: 100%; height: 150px; background: #222; color: #fff; border: none; padding: 10px; font-size: 16px; }
+        button { 
+            margin-top: 10px; padding: 10px; font-size: 18px; cursor: pointer; 
+            background: #4caf50; border: none; color: black; font-weight: bold;
+        }
+        #output { margin-top: 20px; white-space: pre-wrap; word-break: break-word; }
+    </style>
+</head>
+<body>
+
+<h2>Word Format Converter</h2>
+
+<textarea id="input">가방, 가게, 가느, 가득, 가든, 가락, 가령</textarea>
+
+<br>
+<button onclick="convert()">변환하기</button>
+
+<pre id="output"></pre>
+
+<script>
+function convert() {
+    const text = document.getElementById("input").value;
+    const words = text.split(",").map(w => `"${w.trim()}"`);
+    document.getElementById("output").innerText = `[\n${words.join(", ")}\n]`;
+}
+</script>
+
+</body>
+</html>
