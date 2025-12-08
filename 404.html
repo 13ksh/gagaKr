@@ -67,7 +67,7 @@ window.onload = function() {
     let asd = "https://is.gs/";
     console.log(asd);
     const raw = decodeURIComponent(location.pathname.substring(1));
-    console.log(asd);
+    console.log(raw);
     asd += decimalToBase62(findWordIndex(raw.substring(0, 2)));
     console.log(asd);
     asd += decimalToBase62(findWordIndex(raw.substring(3, 5)));
