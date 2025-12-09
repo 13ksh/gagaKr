@@ -16,7 +16,7 @@ async function generate() {
       const res = await fetch(url);
       const text = await res.text();
 
-      document.getElementById("result").innerHTML = `단축 URL은 ${decodeURIComponent("가가.kr" + window.location.pathname.slice(1)).replace(/-+$/, '')} 입니다.<br>단축 URL은 ${extractURL(text)} 으로 연결됩니다.`;//<!--<br><br><a href="javascript:void(0)" onclick="navigator.clipboard.writeText('${decodeURIComponent(window.location.href).replace(/-+$/, '')}')">링크 복사(${decodeURIComponent(window.location.href).replace(/-+$/, '')})</a>--> 
+      document.getElementById("result").innerHTML = `단축 URL은 ${decodeURIComponent("가가.kr/" + window.location.pathname.slice(1)).replace(/-+$/, '')} 입니다.<br>단축 URL은 ${extractURL(text)} 으로 연결됩니다.`;//<!--<br><br><a href="javascript:void(0)" onclick="navigator.clipboard.writeText('${decodeURIComponent(window.location.href).replace(/-+$/, '')}')">링크 복사(${decodeURIComponent(window.location.href).replace(/-+$/, '')})</a>--> 
     } catch(e) {
         document.getElementById("result").innerText = "요청 실패 에러" + e;
     }
