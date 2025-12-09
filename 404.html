@@ -16,7 +16,7 @@ async function generate() {
       const res = await fetch(url);
       const text = await res.text();
 
-      document.getElementById("result").innerText = `단축 URL은 ${window.location.href.replace(/-+$/, '')} 입니다.\n단축 URL은 ${extractURL(text)} 으로 연결됩니다.`; 
+      document.getElementById("result").innerText = `단축 URL은 ${decodeURIComponent(window.location.href).replace(/-+$/, '')} 입니다.\n단축 URL은 ${extractURL(text)} 으로 연결됩니다.`; 
     } catch(e) {
         document.getElementById("result").innerText = "요청 실패 에러" + e;
     }
