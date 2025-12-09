@@ -1,5 +1,21 @@
 <div id="result">요청중...</div>
 <script>
+//(ಠ‿↼)✨
+//(ಠ‿↼)✨
+//(ಠ‿↼)✨
+//(ಠ‿↼)✨
+//(ಠ‿↼)✨
+//(ಠ‿↼)✨
+//(ಠ‿↼)✨
+//(ಠ‿↼)✨
+//(ಠ‿↼)✨
+//(ಠ‿↼)✨
+//(ಠ‿↼)✨
+//(ಠ‿↼)✨
+//(ಠ‿↼)✨
+//(ಠ‿↼)✨
+//(ಠ‿↼)✨
+//https://discord.gg/W65xwPMaQe
 const raw = decodeURIComponent(location.pathname.substring(1));
 function extractURL(str) {
   try {
@@ -16,7 +32,7 @@ async function generate() {
       const res = await fetch(url);
       const text = await res.text();
 
-      document.getElementById("result").innerHTML = `단축 URL은 ${decodeURIComponent(window.location.href).replace(/-+$/, '')} 입니다.<br>단축 URL은 ${extractURL(text)} 으로 연결됩니다.<--<br><br><a href="javascript:void(0)" onclick="navigator.clipboard.writeText('${decodeURIComponent(window.location.href).replace(/-+$/, '')}')">링크 복사(${decodeURIComponent(window.location.href).replace(/-+$/, '')})</a>-->`; 
+      document.getElementById("result").innerHTML = `단축 URL은 ${decodeURIComponent(window.location.href).replace(/-+$/, '')} 입니다.<br>단축 URL은 ${extractURL(text)} 으로 연결됩니다.`;//<!--<br><br><a href="javascript:void(0)" onclick="navigator.clipboard.writeText('${decodeURIComponent(window.location.href).replace(/-+$/, '')}')">링크 복사(${decodeURIComponent(window.location.href).replace(/-+$/, '')})</a>--> 
     } catch(e) {
         document.getElementById("result").innerText = "요청 실패 에러" + e;
     }
