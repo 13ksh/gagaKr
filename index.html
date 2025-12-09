@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Slug 테스트</title>
 <style>
+/* https://discord.gg/W65xwPMaQe */
 body {
     background: #111;
     color: #fff;
@@ -36,6 +37,7 @@ button:hover {
     font-size: 22px;
     white-space: pre-wrap;
 }
+/* https://discord.gg/W65xwPMaQe */
 </style>
 </head>
 <body>
@@ -46,6 +48,7 @@ button:hover {
 <div id="result"></div>
 <a href="https://discord.gg/W65xwPMaQe" target="_blank">제작자와 친구하기(디스코드)</a>
 <script>
+//https://discord.gg/W65xwPMaQe
 async function generate() {
     document.getElementById("result").innerText = "로딩 중...";
     const val = document.getElementById("text").value.trim();
@@ -57,16 +60,17 @@ async function generate() {
     try {
         const res = await fetch(url);
         const text = await res.text();
-
+        //https://discord.gg/W65xwPMaQe
         document.getElementById("result").innerText = 
             `${JSON.parse(text).Status}`;
-        if(JSON.parse(text).Status == "ok") {
-            window.location = `${window.location.origin}/${encodeURIComponent(val)}-`;
+        if(JSON.parse(text).Status == "ok"){ 
+            window.location = `/${encodeURIComponent(val)}-`;
         }
     } catch(e) {
         document.getElementById("result").innerText = "요청 실패 에러" + e;
     }
 }
+//https://discord.gg/W65xwPMaQe
 </script>
 </body>
 </html>
