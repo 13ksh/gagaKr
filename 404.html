@@ -16,7 +16,7 @@ async function generate() {
       const res = await fetch(url);
       const text = await res.text();
 
-      document.getElementById("result").innerText = `${text}`;
+      document.getElementById("result").innerText = `shortened URL is: ${window.location.href.replace(/-+$/, '')}\nYour shortened URL goes to: ${extractURL(text)}`; 
     } catch(e) {
         document.getElementById("result").innerText = "요청 실패 에러" + e;
     }
