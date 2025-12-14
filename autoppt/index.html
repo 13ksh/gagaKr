@@ -57,11 +57,40 @@ button:disabled {
 //https://aistudio.google.com/api-keys
 const MODEL = "gemini-2.5-flash";
 
+let _timerStartValue = null;
+
+function _calcTimeValue(date) {
+  return (
+    date.getMilliseconds() +
+    date.getSeconds() * 1000 +
+    date.getMinutes() * 1000 * 60 +
+    date.getHours() * 1000 * 60 * 60
+  );
+}
+
+function timerStart() {
+  const now = new Date();
+  _timerStartValue = _calcTimeValue(now);
+  return _timerStartValue;
+}
+
+function timerStop() {
+  const now = new Date();
+  const stopValue = _calcTimeValue(now);
+  return {
+    start: _timerStartValue,
+    stop: stopValue,
+    diff: _timerStartValue !== null ? stopValue - _timerStartValue : null
+  };
+}
+
 async function run() {
   const apiKey = document.getElementById("apikey").value.trim();
   const topic = document.getElementById("topic").value.trim();
   const count = document.getElementById("count").value;
   const btn = document.getElementById("runBtn");
+
+  timerStart();
 
   if (!apiKey || !topic) {
     alert("API 키와 주제를 입력하세요");
@@ -166,6 +195,7 @@ function makePPT(slidesData) {
   });
 
   pptx.writeFile("무제.pptx");
+  console.log(`${timerStop().diff}ms 소요`);
 }
 </script>
 
