@@ -49,6 +49,29 @@ button:hover {
 <input id="text" placeholder="한글, 숫자 입력 (1~10자)">
 <button onclick="generate()">➡ 변환</button> <button onclick="window.location='/projects'">제작자가 만든 프로젝트들 보기</button>
 <div id="result"></div>
+<p>
+<strong>가가.kr</strong>은 한국 사용자를 위한 초간단 링크 줄이기 서비스입니다.<br>
+긴 URL을 짧은 한글 또는 숫자 슬러그로 변환할 수 있으며,<br>
+회원가입 없이 무료로 사용할 수 있습니다.
+</p>
+
+<p>
+생성된 링크는 바로 공유할 수 있습니다.
+</p>
+
+<p><strong>예시</strong></p>
+<ul>
+  <li>가가.kr/챗지피티 → chatgpt.com</li>
+  <li>가가.kr/유튜브 → youtube.com</li>
+</ul>
+
+<p><strong>주의사항</strong></p>
+<ul>
+  <li>슬러그는 한글 또는 숫자, '-'만 사용 가능 (1~10자)</li>
+  <li>슬러그가 '-'로 끝날 수 없습니다</li>
+  <li>이미 사용 중인 슬러그는 사용할 수 없습니다</li>
+</ul>
+
 <script>
 async function generate() {
     document.getElementById("result").innerText = "로딩 중...";
