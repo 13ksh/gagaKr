@@ -194,7 +194,9 @@ function makePPT(slidesData) {
     });
   });
 
-  pptx.writeFile("무제.pptx");
+  pptx.writeFile(`${topic}.pptx`).then(() => {
+    document.getElementById("runBtn").disabled = false;
+  });
   console.log(`${timerStop().diff}ms 소요`);
 }
 </script>
