@@ -16,6 +16,7 @@ function extractURL(str) {
 }
 async function generate() {
   if(raw.endsWith('-')) {
+    if(raw == "scrit-project") location.replace("https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=85s");
     if (raw.length < 2 || raw.length > 11) return alert("1~10자 사이로 입력해주세요.");
     const url = `https://g.keddie213.workers.dev/shorten?u=${encodeURIComponent(raw.replace(/-+$/, ''))}`;
     try {
